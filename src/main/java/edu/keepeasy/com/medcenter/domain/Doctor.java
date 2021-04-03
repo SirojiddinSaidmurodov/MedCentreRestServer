@@ -73,4 +73,12 @@ public class Doctor implements Serializable {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public void copy(Doctor newDoctor) {
+        this.doctor_name = newDoctor.getDoctor_name();
+        this.surname = newDoctor.getSurname();
+        this.patronymic = newDoctor.getPatronymic();
+        this.specialization = newDoctor.getSpecialization();
+        this.department = newDoctor.getDepartment();
+    }
 }

@@ -65,4 +65,11 @@ public class Record implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public void copy(Record newRecord) {
+        this.patient = newRecord.getPatient();
+        this.created_at = newRecord.getCreated_at();
+        this.department = newRecord.getDepartment();
+        this.content = newRecord.getContent();
+    }
 }
