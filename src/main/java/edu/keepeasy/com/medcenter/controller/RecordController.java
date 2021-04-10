@@ -28,7 +28,12 @@ public class RecordController {
         return repo.findById(id).orElseThrow(() -> new RecordNotFoundException(id));
     }
 
-    @PostMapping("/{id}")
+    @PostMapping()
+    public Record newRecord(@RequestBody Record newRecord) {
+        return repo.save(newRecord);
+    }
+
+    @PutMapping("/{id}")
     public Record replaceRecord(@RequestBody Record newRecord, @PathVariable Long id) {
         return repo.findById(id)
                 .map(record -> {

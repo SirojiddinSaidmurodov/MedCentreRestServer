@@ -8,7 +8,7 @@ public class Doctor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String doctor_name;
+    private String name;
     private String surname;
     private String patronymic;
     private String specialization;
@@ -18,8 +18,8 @@ public class Doctor implements Serializable {
     public Doctor() {
     }
 
-    public Doctor(String doctor_name, String surname, String patronymic, String specialization, Department department) {
-        this.doctor_name = doctor_name;
+    public Doctor(String name, String surname, String patronymic, String specialization, Department department) {
+        this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.specialization = specialization;
@@ -34,12 +34,12 @@ public class Doctor implements Serializable {
         this.id = id;
     }
 
-    public String getDoctor_name() {
-        return doctor_name;
+    public String getName() {
+        return name;
     }
 
-    public void setDoctor_name(String doctor_name) {
-        this.doctor_name = doctor_name;
+    public void setName(String doctor_name) {
+        this.name = doctor_name;
     }
 
     public String getSurname() {
@@ -75,7 +75,7 @@ public class Doctor implements Serializable {
     }
 
     public void copy(Doctor newDoctor) {
-        this.doctor_name = newDoctor.getDoctor_name();
+        this.name = newDoctor.getName();
         this.surname = newDoctor.getSurname();
         this.patronymic = newDoctor.getPatronymic();
         this.specialization = newDoctor.getSpecialization();

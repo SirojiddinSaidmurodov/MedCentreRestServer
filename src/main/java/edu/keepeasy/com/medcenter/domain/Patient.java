@@ -16,7 +16,8 @@ public class Patient implements Serializable {
     private String surname;
     private String patronymic;
     private LocalDate dateOfBirth;
-    private String passportNumber;
+    private int passportNumber;
+    private int passportSeries;
     private String workPlace;
     private int insuranceNumber;
     private String insuranceType;
@@ -24,12 +25,13 @@ public class Patient implements Serializable {
     public Patient() {
     }
 
-    public Patient(String patient_name, String surname, String patronymic, LocalDate dateOfBirth, String passportNumber, String workPlace, int insuranceNumber, String insuranceType) {
+    public Patient(String patient_name, String surname, String patronymic, LocalDate dateOfBirth, int passportNumber, int passportSeries, String workPlace, int insuranceNumber, String insuranceType) {
         this.patient_name = patient_name;
         this.surname = surname;
         this.patronymic = patronymic;
         this.dateOfBirth = dateOfBirth;
         this.passportNumber = passportNumber;
+        this.passportSeries = passportSeries;
         this.workPlace = workPlace;
         this.insuranceNumber = insuranceNumber;
         this.insuranceType = insuranceType;
@@ -41,10 +43,19 @@ public class Patient implements Serializable {
         this.patronymic = newPatient.patronymic;
         this.dateOfBirth = newPatient.dateOfBirth;
         this.passportNumber = newPatient.passportNumber;
+        this.passportSeries = newPatient.passportSeries;
         this.workPlace = newPatient.workPlace;
         this.insuranceNumber = newPatient.insuranceNumber;
         this.insuranceType = newPatient.insuranceType;
         return this;
+    }
+
+    public int getPassportSeries() {
+        return passportSeries;
+    }
+
+    public void setPassportSeries(int passportSerial) {
+        this.passportSeries = passportSerial;
     }
 
     public String getPatient_name() {
@@ -79,11 +90,11 @@ public class Patient implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getPassportNumber() {
+    public int getPassportNumber() {
         return passportNumber;
     }
 
-    public void setPassportNumber(String passportNumber) {
+    public void setPassportNumber(int passportNumber) {
         this.passportNumber = passportNumber;
     }
 
@@ -113,6 +124,10 @@ public class Patient implements Serializable {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setId(Long id) {
