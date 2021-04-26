@@ -18,11 +18,12 @@ public class Medicament implements Serializable {
     private String dosage;
     private String side_effects;
     private String overdose;
+    private int count;
 
     public Medicament() {
     }
 
-    public Medicament(String name, String composition, PhTG ph_group, String indications, String contraindications, String dosage, String side_effects, String overdose) {
+    public Medicament(String name, String composition, PhTG ph_group, String indications, String contraindications, String dosage, String side_effects, String overdose,int count) {
         this.name = name;
         this.composition = composition;
         this.ph_group = ph_group;
@@ -31,6 +32,15 @@ public class Medicament implements Serializable {
         this.dosage = dosage;
         this.side_effects = side_effects;
         this.overdose = overdose;
+        this.count =count;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public String getName() {
@@ -116,5 +126,6 @@ public class Medicament implements Serializable {
         this.dosage = medicament.dosage;
         this.side_effects = medicament.side_effects;
         this.overdose = medicament.overdose;
+        this.count = medicament.count;
     }
 }
