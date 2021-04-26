@@ -1,0 +1,31 @@
+spring:
+  config:
+    activate:
+      on-profile: h2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: medcenter
+    password: password
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8080
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/medcenter?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: medcenter
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
