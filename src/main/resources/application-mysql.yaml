@@ -1,0 +1,12 @@
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/medcenter?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: medcenter
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

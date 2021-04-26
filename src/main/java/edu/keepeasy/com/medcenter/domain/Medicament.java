@@ -12,7 +12,7 @@ public class Medicament implements Serializable {
     private String name;
     private String composition;
     @ManyToOne
-    private PhTG group;
+    private PhTG ph_group;
     private String indications;
     private String contraindications; // противопоказания
     private String dosage;
@@ -22,10 +22,10 @@ public class Medicament implements Serializable {
     public Medicament() {
     }
 
-    public Medicament(String name, String composition, PhTG group, String indications, String contraindications, String dosage, String side_effects, String overdose) {
+    public Medicament(String name, String composition, PhTG ph_group, String indications, String contraindications, String dosage, String side_effects, String overdose) {
         this.name = name;
         this.composition = composition;
-        this.group = group;
+        this.ph_group = ph_group;
         this.indications = indications;
         this.contraindications = contraindications;
         this.dosage = dosage;
@@ -49,12 +49,12 @@ public class Medicament implements Serializable {
         this.composition = composition;
     }
 
-    public PhTG getGroup() {
-        return group;
+    public PhTG getPh_group() {
+        return ph_group;
     }
 
-    public void setGroup(PhTG group) {
-        this.group = group;
+    public void setPh_group(PhTG group) {
+        this.ph_group = group;
     }
 
     public String getIndications() {
@@ -110,7 +110,7 @@ public class Medicament implements Serializable {
         this.id = medicament.id;
         this.name = medicament.name;
         this.composition = medicament.composition;
-        this.group = medicament.group;
+        this.ph_group = medicament.ph_group;
         this.indications = medicament.indications;
         this.contraindications = medicament.contraindications;
         this.dosage = medicament.dosage;
