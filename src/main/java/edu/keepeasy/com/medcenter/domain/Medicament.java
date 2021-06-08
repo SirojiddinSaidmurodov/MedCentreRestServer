@@ -1,13 +1,12 @@
 package edu.keepeasy.com.medcenter.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class Medicament implements Serializable {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String composition;
@@ -23,7 +22,7 @@ public class Medicament implements Serializable {
     public Medicament() {
     }
 
-    public Medicament(String name, String composition, PhTG ph_group, String indications, String contraindications, String dosage, String side_effects, String overdose,int count) {
+    public Medicament(String name, String composition, PhTG ph_group, String indications, String contraindications, String dosage, String side_effects, String overdose, int count) {
         this.name = name;
         this.composition = composition;
         this.ph_group = ph_group;
@@ -32,7 +31,7 @@ public class Medicament implements Serializable {
         this.dosage = dosage;
         this.side_effects = side_effects;
         this.overdose = overdose;
-        this.count =count;
+        this.count = count;
     }
 
     public int getCount() {
